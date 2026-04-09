@@ -1,6 +1,7 @@
 package itson.daos;
 
 
+import itson.interfaces.IEstudianteDAO;
 import itson.matchu_dominio.models.Estudiante;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
@@ -13,8 +14,9 @@ import java.util.Optional;
  *
  * @author Ricardo
  */
-public class EstudianteDAO {
+public class EstudianteDAO implements IEstudianteDAO{
     
+    @Override
     public Estudiante guardar(Estudiante estudiante) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -30,6 +32,7 @@ public class EstudianteDAO {
         }
     }
 
+    @Override
     public Optional<Estudiante> buscarPorId(Long id) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -39,6 +42,7 @@ public class EstudianteDAO {
         }
     }
 
+    @Override
     public Optional<Estudiante> buscarPorCorreo(String correo) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -55,6 +59,7 @@ public class EstudianteDAO {
         }
     }
 
+    @Override
     public List<Estudiante> listarTodosExcepto(Long idExcluido) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -67,7 +72,8 @@ public class EstudianteDAO {
             em.close();
         }
     }
-
+    
+    @Override
     public List<Estudiante> listarPendientesDeEvaluar(Long idEmisor) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -84,7 +90,9 @@ public class EstudianteDAO {
             em.close();
         }
     }
-
+    
+    
+    @Override
     public boolean existeCorreo(String correo) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -97,6 +105,7 @@ public class EstudianteDAO {
         }
     }
 
+    @Override
     public Estudiante actualizar(Estudiante estudiante) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -112,6 +121,7 @@ public class EstudianteDAO {
         }
     }
 
+    @Override
     public void eliminar(Long id) {
         EntityManager em = JPAUtil.getEntityManager();
         try {

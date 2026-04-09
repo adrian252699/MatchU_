@@ -1,6 +1,7 @@
 package itson.daos;
 
 
+import itson.interfaces.IMatchDAO;
 import itson.matchu_dominio.models.Match;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
@@ -11,8 +12,9 @@ import java.util.Optional;
  *
  * @author Ricardo
  */
-public class MatchDAO {
+public class MatchDAO implements IMatchDAO{
 
+    @Override
     public Match guardar(Match match) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -28,6 +30,7 @@ public class MatchDAO {
         }
     }
 
+    @Override
     public Optional<Match> buscarEntre(Long idA, Long idB) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -43,6 +46,7 @@ public class MatchDAO {
         }
     }
 
+    @Override
     public List<Match> listarMatchesDeEstudiante(Long idEstudiante) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -57,6 +61,7 @@ public class MatchDAO {
         }
     }
 
+    @Override
     public Optional<Match> buscarPorId(Long idMatch) {
         EntityManager em = JPAUtil.getEntityManager();
         try {

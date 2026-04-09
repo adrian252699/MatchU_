@@ -1,6 +1,7 @@
 package itson.daos;
 
 
+import itson.interfaces.IMensajeDAO;
 import itson.matchu_dominio.models.Mensaje;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
@@ -10,8 +11,9 @@ import java.util.List;
  *
  * @author Ricardo
  */
-public class MensajeDAO {
+public class MensajeDAO implements IMensajeDAO{
 
+    @Override
     public Mensaje guardar(Mensaje mensaje) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -27,6 +29,7 @@ public class MensajeDAO {
         }
     }
 
+    @Override
     public List<Mensaje> listarPorMatch(Long idMatch) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -40,6 +43,7 @@ public class MensajeDAO {
         }
     }
 
+    @Override
     public void marcarComoLeidos(Long idMatch, Long idDestinatario) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -58,7 +62,8 @@ public class MensajeDAO {
             em.close();
         }
     }
-
+    
+    @Override
     public long contarNoLeidos(Long idMatch, Long idDestinatario) {
         EntityManager em = JPAUtil.getEntityManager();
         try {

@@ -1,6 +1,7 @@
 package itson.daos;
 
 
+import itson.interfaces.IHobbyDAO;
 import itson.matchu_dominio.models.Hobby;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
@@ -12,8 +13,9 @@ import java.util.Optional;
  *
  * @author Ricardo
  */
-public class HobbyDAO {
+public class HobbyDAO implements IHobbyDAO{
 
+    @Override
     public Hobby guardar(Hobby hobby) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -29,6 +31,7 @@ public class HobbyDAO {
         }
     }
 
+    @Override
     public List<Hobby> listarTodos() {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -40,6 +43,7 @@ public class HobbyDAO {
         }
     }
 
+    @Override
     public Optional<Hobby> buscarPorNombre(String nombre) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -52,6 +56,7 @@ public class HobbyDAO {
         }
     }
 
+    @Override
     public void inicializarHobbiesPorDefecto() {
         if (!listarTodos().isEmpty()) return;
         String[][] datos = {

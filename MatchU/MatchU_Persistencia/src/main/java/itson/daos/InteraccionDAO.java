@@ -1,6 +1,7 @@
 package itson.daos;
 
 
+import itson.interfaces.IInteraccionDAO;
 import itson.matchu_dominio.models.Interaccion;
 import itson.matchu_dominio.models.Interaccion.TipoInteraccion;
 import itson.matchu_utilerias.JPAUtil;
@@ -12,8 +13,9 @@ import java.util.Optional;
  *
  * @author Ricardo
  */
-public class InteraccionDAO {
+public class InteraccionDAO implements IInteraccionDAO{
 
+    @Override
     public Interaccion guardar(Interaccion interaccion) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -29,6 +31,7 @@ public class InteraccionDAO {
         }
     }
 
+    @Override
     public Optional<Interaccion> buscar(Long idEmisor, Long idReceptor) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
@@ -43,12 +46,14 @@ public class InteraccionDAO {
         }
     }
 
+    @Override
     public boolean dioCLikeA(Long idEmisor, Long idReceptor) {
         return buscar(idEmisor, idReceptor)
                .map(i -> i.getTipo() == TipoInteraccion.LIKE)
                .orElse(false);
     }
 
+    @Override
     public List<Interaccion> listarLikesEnviados(Long idEmisor) {
         EntityManager em = JPAUtil.getEntityManager();
         try {
