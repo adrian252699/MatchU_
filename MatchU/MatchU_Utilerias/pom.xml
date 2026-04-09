@@ -11,9 +11,9 @@
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
-            <groupId>ITSON</groupId>
+            <groupId>${project.groupId}</groupId>
             <artifactId>MatchU_Dominio</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
     <properties>

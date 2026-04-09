@@ -12,19 +12,13 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>MatchU_Utilerias</artifactId>
+            <artifactId>MatchU_Dominio</artifactId>
             <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ITSON</groupId>
-                    <artifactId>MatchU_Dominio</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
         <dependency>
-            <groupId>ITSON</groupId>
-            <artifactId>MatchU_Dominio</artifactId>
-            <version>1.0-SNAPSHOT</version>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>MatchU_Utilerias</artifactId>
+            <version>${project.version}</version>
         </dependency>
     </dependencies>
     <properties>

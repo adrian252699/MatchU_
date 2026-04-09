@@ -12,17 +12,6 @@
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>MatchU_Utilerias</artifactId>
-            <version>${project.version}</version>
-            <exclusions>
-                <exclusion>
-                    <groupId>ITSON</groupId>
-                    <artifactId>MatchU_Dominio</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
             <artifactId>MatchU_Persistencia</artifactId>
             <version>${project.version}</version>
         </dependency>

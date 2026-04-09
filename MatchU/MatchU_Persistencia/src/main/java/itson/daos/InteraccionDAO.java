@@ -1,8 +1,8 @@
 package itson.daos;
 
-import itson.matchu.model.Interaccion;
-import itson.matchu.model.Interaccion.TipoInteraccion;
 
+import itson.matchu_dominio.models.Interaccion;
+import itson.matchu_dominio.models.Interaccion.TipoInteraccion;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
 import java.util.List;

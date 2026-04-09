@@ -1,6 +1,7 @@
 package itson.daos;
 
-import itson.matchu.model.Hobby;
+
+import itson.matchu_dominio.models.Hobby;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
 import java.util.List;

@@ -1,6 +1,7 @@
 package itson.daos;
 
-import itson.matchu.model.Mensaje;
+
+import itson.matchu_dominio.models.Mensaje;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
 import java.util.List;

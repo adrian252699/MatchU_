@@ -1,7 +1,7 @@
 package itson.daos;
 
 
-import itson.matchu.model.Estudiante;
+import itson.matchu_dominio.models.Estudiante;
 import itson.matchu_utilerias.JPAUtil;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.NoResultException;
