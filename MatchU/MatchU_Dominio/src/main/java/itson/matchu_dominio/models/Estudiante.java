@@ -36,8 +36,8 @@ public class Estudiante implements Serializable {
     @Column(name = "semestre")
     private Integer semestre;
 
-    @Column(name = "bio", length = 500)
-    private String bio;
+    @Column(name = "intereses", length = 500)
+    private String intereses;
 
     @Lob
     @Column(name = "foto_perfil")
@@ -133,12 +133,12 @@ public class Estudiante implements Serializable {
         this.semestre = semestre;
     }
 
-    public String getBio() {
-        return bio;
+    public String getIntereses() {
+        return intereses;
     }
 
-    public void setBio(String bio) {
-        this.bio = bio;
+    public void setIntereses(String intereses) {
+        this.intereses = intereses;
     }
 
     public byte[] getFotoPerfil() {

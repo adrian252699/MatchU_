@@ -11,6 +11,7 @@
         <module>MatchU_Presentacion</module>
         <module>MatchU_Utilerias</module>
         <module>MatchU_Dominio</module>
+        <module>Matchu_DTOs</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
